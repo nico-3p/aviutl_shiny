@@ -1,0 +1,13 @@
+--track0:タイプ,0,60,0,1
+--track1:アニメ,0,80,0,1
+--check0:DevTools,0
+
+obj.setoption("drawtarget", "tempbuffer", 1920, 1080)
+obj.load("tempbuffer")
+
+require("browser").execute({
+  dir = "shiny",
+  tabid = "",
+  param = obj.track1,
+  dev = obj.check0,
+});
