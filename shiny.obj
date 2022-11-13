@@ -1,5 +1,5 @@
---track0:ƒ^ƒCƒv,0,60,0,1
---track1:ƒAƒjƒ,0,80,0,1
+--track0:ï¿½^ï¿½Cï¿½v,0,60,0,1
+--track1:ï¿½Aï¿½jï¿½ï¿½,0,80,0,1
 --check0:DevTools,0
 
 obj.setoption("drawtarget", "tempbuffer", 1920, 1080)
@@ -10,4 +10,5 @@ require("browser").execute({
   tabid = "",
   param = obj.track1,
   dev = obj.check0,
+  
 });
