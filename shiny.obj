@@ -1,13 +1,18 @@
---track0:Type,0,60,0,1
---track1:Animation,0,80,0,1
+--track0:アニメ,0,100,0,1
+--track1:位置(%),0,100,0,0.01
+--track2:速度(%),0,800,100,0.01
 --check0:DevTools,0
+--dialog:Jsonファイルパス,jpath="model/data.json";重ねるアニメ番号,trackAnims="[]";
 
-obj.setoption("drawtarget", "tempbuffer", 1920, 1080)
+obj.setoption("drawtarget", "tempbuffer", 1440, 1080)
 obj.load("tempbuffer")
 
 require("browser").execute({
   dir = "shiny",
   tabid = "",
-  param = obj.track1,
-  dev = obj.check0,
+  param = "{\"time\": "..obj.time..
+    ", \"anim\": "..obj.track0..
+    ", \"start\": "..obj.track1..
+    ", \"rate\": "..obj.track2.."}",
+  dev = obj.check0
 });
