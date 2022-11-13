@@ -1,6 +1,6 @@
 exe/
 browser.lua
-絵文字.obj
+*.obj
 contents/shiny/model/*atlas
 contents/shiny/model/*json
 contents/shiny/model/*png
