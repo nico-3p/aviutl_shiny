@@ -1,5 +1,5 @@
---track0:タイプ,0,60,0,1
---track1:アニメーション,0,80,0,1
+--track0:Type,0,60,0,1
+--track1:Animation,0,80,0,1
 --check0:DevTools,0
 
 obj.setoption("drawtarget", "tempbuffer", 1920, 1080)
