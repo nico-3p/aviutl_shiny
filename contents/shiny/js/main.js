@@ -50,7 +50,7 @@ function setupAnimationList() {
 /**
  * indexを用いたアニメーション変更
  * @param {Spine} currentSpine 対象のSpine
- * @param {*} anim アニメーションのindex
+ * @param {Number} anim アニメーションのindex
  */
 function setAnimationByIndex(currentSpine, anim) {
     const now = currentSpine.state.tracks[0].animation;
