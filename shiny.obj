@@ -1,6 +1,7 @@
---track0:アニメ,0,100,0,1
---track1:位置(%),0,100,0,0.01
---track2:速度(%),0,800,100,0.01
+--track0:スケール,0,1000,100,0.01
+--track1:アニメ,0,100,0,1
+--track2:位置(%),0,100,0,0.01
+--track3:速度(%),0,800,100,0.01
 --check0:DevTools,0
 --dialog:Jsonファイルパス,jpath="model/data.json";重ねるアニメ番号,trackAnims="[]";
 
@@ -11,8 +12,9 @@ require("browser").execute({
   dir = "shiny",
   tabid = "",
   param = "{\"time\": "..obj.time..
-    ", \"anim\": "..obj.track0..
-    ", \"start\": "..obj.track1..
-    ", \"rate\": "..obj.track2.."}",
+    ", \"scale\": "..obj.track0..
+    ", \"anim\": "..obj.track1..
+    ", \"start\": "..obj.track2..
+    ", \"rate\": "..obj.track3.."}",
   dev = obj.check0
 });

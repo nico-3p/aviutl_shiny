@@ -34,6 +34,12 @@ function onAssetsLoaded(_, res) {
 
     setupAnimationList();
 
+    try {
+        currentSpine.skeleton.setSkinByName("normal");
+    } catch (e) {
+        currentSpine.skeleton.setSkinByName("default");
+    }
+    
     const defaultAnimation = "wait";
     currentSpine.state.setAnimation(0, defaultAnimation, false);
 }
@@ -90,6 +96,8 @@ AviUtlBrowser.registerRenderer(async params => {
 
     // アニメーション変更
     setAnimationByIndex(cont.children[0], p.anim);
+    console.log(p.scale);
+    cont.scale.set(p.scale / 100);
 });
 
 init();
