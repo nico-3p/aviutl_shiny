@@ -5,7 +5,7 @@
 --check0:DevTools,0
 --dialog:Jsonファイルパス,jpath="model/data.json";重ねるアニメ番号,trackAnims="[]";
 
-obj.setoption("drawtarget", "tempbuffer", 1440, 1080)
+obj.setoption("drawtarget", "tempbuffer", 1920, 1080)
 obj.load("tempbuffer")
 
 require("browser").execute({
