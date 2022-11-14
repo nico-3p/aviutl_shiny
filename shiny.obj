@@ -1,20 +1,42 @@
---track0:スケール,0,1000,100,0.01
+--track0:スケール,0,10000,100,0.01
 --track1:アニメ,0,100,0,1
 --track2:位置(%),0,100,0,0.01
 --track3:速度(%),0,800,100,0.01
 --check0:DevTools,0
---dialog:Jsonファイルパス,jpath="model/data.json";重ねるアニメ番号,trackAnims="[]";
+--dialog:path,local jpath="model/data.json";描画サイズ,local drawSize={1920, 1080};座標固定/chk,local oriXY=0;SD反転/chk,local skinRev=0;
 
-obj.setoption("drawtarget", "tempbuffer", 1920, 1080)
+if not tostring(drawSize):find("table:") then drawSize = {1920,1080} end
+if not tonumber(drawSize[1]) then drawSize[1] = 1920 end
+if not tonumber(drawSize[2]) then drawSize[2] = 1080 end
+
+obj.setoption("drawtarget", "tempbuffer",drawSize[1],drawSize[2])
 obj.load("tempbuffer")
 
 require("browser").execute({
   dir = "shiny",
-  tabid = "",
+  tabid = jpath,
   param = "{\"time\": "..obj.time..
+    ", \"jpath\": \""..jpath.."\""..
     ", \"scale\": "..obj.track0..
     ", \"anim\": "..obj.track1..
     ", \"start\": "..obj.track2..
-    ", \"rate\": "..obj.track3.."}",
+    ", \"rate\": "..obj.track3..
+    ", \"oriXY\": "..oriXY..
+    ", \"x\": "..obj.x..
+    ", \"y\": "..obj.y..
+    ", \"w\": "..drawSize[1]..
+    ", \"h\": "..drawSize[2]..
+    ", \"skinRev\": "..skinRev..
+    "}",
   dev = obj.check0
 });
+
+-- こんな事してはいけない
+if oriXY==1 then
+  obj.ox = -obj.x
+  obj.oy = -obj.y
+end
+
+
+-- TODO: ポーズと表情のモーションを重ねる
+-- 重ねるアニメ番号,local rackAnims={};

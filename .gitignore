@@ -1,6 +1,5 @@
 exe/
 browser.lua
 *.obj
-contents/shiny/model/*atlas
-contents/shiny/model/*json
-contents/shiny/model/*png
+contents/shiny/model/
+contents/shiny/model/!a.txt
