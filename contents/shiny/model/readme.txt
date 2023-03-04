@@ -1,2 +1,1 @@
-
-ここにdata.json等を入れる
+ここにdata.json、data.atlas、data.pngを入れる
